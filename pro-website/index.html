@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Recruitment — Smart Hiring Platform</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.5 6h6.5l-5.3 4.1L18.9 20 12 15.9 5.1 20l2.2-7.9L2 8h6.5L12 2z"/></svg>
+      <span>AI Recruitment</span>
+    </div>
+    <nav class="nav">
+      <a href="#/" data-link>Home</a>
+      <a href="#/jobs" data-link>Jobs</a>
+      <a href="#/dashboard" data-link>Recruiter Dashboard</a>
+      <a href="#/get-started" class="btn btn--sm">Get Started</a>
+    </nav>
+    <button id="menuToggle" class="menu-btn" aria-label="menu">☰</button>
+  </header>
+
+  <nav id="mobileMenu" class="mobile-menu hidden">
+    <a href="#/" data-link>Home</a>
+    <a href="#/jobs" data-link>Jobs</a>
+    <a href="#/dashboard" data-link>Recruiter Dashboard</a>
+    <a href="#/get-started" class="btn">Get Started</a>
+  </nav>
+
+  <main id="app" class="page"></main>
+
+  <dialog id="applyModal" class="modal">
+    <form method="dialog" class="modal__box" id="applyFormBox">
+      <div class="modal__header">
+        <h3 id="applyJobTitle">Apply</h3>
+        <button id="closeApply" class="icon-btn" aria-label="close">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="grid">
+          <div class="field"><label>Full Name</label><input id="candName" placeholder="John Doe" /></div>
+          <div class="field"><label>Email</label><input id="candEmail" type="email" placeholder="john@doe.com" /></div>
+          <div class="field"><label>Phone</label><input id="candPhone" placeholder="+1 555-1234" /></div>
+          <div class="field --full"><label>Resume (raw text)</label><textarea id="resumeText" rows="4" placeholder="Paste your resume summary..."></textarea></div>
+          <div class="field"><label>Skills (comma)</label><input id="resumeSkills" placeholder="javascript, react, node.js, sql" /></div>
+          <div class="field"><label>Years of Experience</label><input id="resumeYears" type="number" min="0" value="0" /></div>
+          <div class="field"><label>Degree</label><input id="resumeDegree" placeholder="cs / it / ece / other" value="cs" /></div>
+          <div class="field"><label>Certifications (comma)</label><input id="resumeCerts" placeholder="aws, azure" /></div>
+        </div>
+        <div id="applyResult" class="result hidden"></div>
+      </div>
+      <div class="modal__footer"><button id="submitApply" class="btn">Submit & Get AI Score</button></div>
+    </form>
+  </dialog>
+
+  <footer class="footer">© 2025 • AI Recruitment • Built for Research Projects</footer>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
